@@ -4,16 +4,21 @@
  */
 
 form {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
-
-  width: 50%;
 }
 
 fieldset {
+  grid-column: span 12;
   border: 0;
+}
+@media (width >= 700px) {
+  fieldset {
+    grid-column: span 6;
+  }
 }
 
 fieldset legend {

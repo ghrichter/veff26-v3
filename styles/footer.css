@@ -6,7 +6,6 @@
 footer {
   display: flex;
   justify-content: center;
-
   padding: 20px;
   border-top: 2px solid #000000;
   background-color: #996644;
@@ -14,13 +13,21 @@ footer {
 }
 
 footer .content {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  max-width: 800px;
+  max-width: var(--max-width);
 }
-
+footer section {
+  grid-column: span 12;
+}
+@media (width >=700px) {
+  footer section {
+    grid-column: span 4;
+  }
+}
 footer ul {
   list-style: none;
 }
